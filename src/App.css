@@ -95,7 +95,7 @@ h1 {
   display: flex;
   width: 100%;
   background-color: black;
-  height: 30px;
+  height: 40px;
   margin-bottom: 30px;
   align-items: center;
   justify-content: space-between;
@@ -186,13 +186,53 @@ ul {
   justify-content: center;
   margin: 20px;
   gap: 10px;
+  overflow: scroll;
+  flex-wrap: wrap;
+  height: 50px;
+  /* Cacher la scroll bar en gardant la fonctionnalité */
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /*Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+ul::-webkit-scrollbar {
+  display: none;
 }
 
 .pagination-button {
   height: 25px;
-  width: 25px;
+  width: 35px;
   border-radius: 5px;
   font-weight: bold;
   color: #ebb964;
   background: black;
+}
+
+/* LIST COMIC */
+
+.list-comic {
+  background-color: black;
+  height: 100%;
+  background-image: url("https://as2.ftcdn.net/v2/jpg/05/84/02/69/1000_F_584026907_ksj4Rk4TVxWhVduqBsV5QMxr4MjNqqno.jpg");
+  background-size: contain;
+  background-position: center;
+  color: white;
+}
+
+.list-comic input {
+  width: 300px;
+}
+
+.list-comic input::placeholder {
+  background-color: black;
+  opacity: 0.8;
+  color: #35cfb8;
+}
+
+.comic-card {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 7px;
 }

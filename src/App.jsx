@@ -48,7 +48,12 @@ const App = () => {
             />
           }
         />
-        <Route path="/comics" element={<ListComic />} />
+        <Route
+          path="/comics"
+          element={
+            <ListComic favorite={favorite} handleFavorite={handleFavorite} />
+          }
+        />
         <Route path="/favorite" element={<ListFavorite />} />
         <Route path="/comics/:characterId" element={<ListComicByCharacter />} />
         <Route path="/comic/:comicId" element={<ComicCard />} />

@@ -52,7 +52,7 @@ header > div {
 }
 
 header button {
-  background: linear-gradient(#be491e, #ebb964, #5c958c);
+  background: linear-gradient(#eb1c2e, #ebb964, #35cfb8);
   height: 40px;
   border-radius: 5px;
   width: 150px;
@@ -77,7 +77,7 @@ header button {
 }
 
 .opacite {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 h1 {
@@ -88,7 +88,29 @@ h1 {
   background-color: #000000;
   border-radius: 5px;
   margin-bottom: 20px;
-  color: #ebb964;
+  color: #35cfb8;
+}
+
+.recherche {
+  display: flex;
+  width: 100%;
+  background-color: black;
+  height: 30px;
+  margin-bottom: 30px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  color: #35cfb8;
+}
+
+.list-character input {
+  width: 300px;
+}
+
+.list-character input::placeholder {
+  background-color: black;
+  opacity: 0.8;
+  color: #35cfb8;
 }
 
 /* CHARACTER CARD */
@@ -102,7 +124,7 @@ h1 {
 
 .card {
   width: 230px;
-  height: 350px;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -131,10 +153,46 @@ h1 {
   margin-top: 10px;
   font-weight: bold;
   font-size: 18px;
-  color: #be491e;
+  color: #eb1c2e;
   text-align: center;
 }
 
 .card img {
   flex: 2;
+}
+
+.card button {
+  height: 25px;
+  margin: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  background: linear-gradient(#ebb964, #35cfb8);
+}
+
+.card p {
+  height: 25px;
+  margin: 10px;
+  padding: 5px;
+  font-weight: bold;
+  border-radius: 5px;
+  background: linear-gradient(#eb1c2e, #ebb964);
+  color: #000000;
+}
+
+/* PAGINATION */
+
+ul {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  gap: 10px;
+}
+
+.pagination-button {
+  height: 25px;
+  width: 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #ebb964;
+  background: black;
 }

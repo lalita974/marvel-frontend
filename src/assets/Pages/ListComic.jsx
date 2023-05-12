@@ -20,7 +20,6 @@ const ListComic = (props) => {
         setData(response.data);
         setTotalComic(response.data.count);
         setIsLoading(false);
-        console.log(response.data);
       } catch (error) {
         console.log(error.response);
       }

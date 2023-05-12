@@ -68,16 +68,14 @@ header button {
   height: 100%;
 }
 .list-character {
-  background-color: black;
   height: 100%;
-  background-image: url("https://as2.ftcdn.net/v2/jpg/05/84/02/69/1000_F_584026907_ksj4Rk4TVxWhVduqBsV5QMxr4MjNqqno.jpg");
+  background-image: url("https://static.posters.cz/image/1300/calendrier/marvel-comics-i32337.jpg");
   background-size: contain;
   background-position: center;
-  color: white;
 }
 
 .opacite {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 h1 {
@@ -85,7 +83,7 @@ h1 {
   font-weight: bold;
   text-align: center;
   padding: 20px;
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.8);
   border-radius: 5px;
   margin-bottom: 20px;
   color: #35cfb8;
@@ -134,7 +132,7 @@ h1 {
 }
 
 .card div {
-  flex: 1;
+  flex: 2;
   margin: 10px 5px;
   text-align: center;
   overflow-y: scroll;
@@ -159,6 +157,13 @@ h1 {
 
 .card img {
   flex: 2;
+}
+
+.card a {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #ebb964;
+  flex: 1;
 }
 
 .card button {
@@ -207,17 +212,16 @@ ul::-webkit-scrollbar {
   font-weight: bold;
   color: #ebb964;
   background: black;
+  border: #ebb964 solid 1px;
 }
 
 /* LIST COMIC */
 
 .list-comic {
-  background-color: black;
   height: 100%;
-  background-image: url("https://as2.ftcdn.net/v2/jpg/05/84/02/69/1000_F_584026907_ksj4Rk4TVxWhVduqBsV5QMxr4MjNqqno.jpg");
+  background-image: url("https://static.posters.cz/image/1300/calendrier/marvel-comics-i32337.jpg");
   background-size: contain;
   background-position: center;
-  color: white;
 }
 
 .list-comic input {
@@ -235,4 +239,76 @@ ul::-webkit-scrollbar {
   flex-wrap: wrap;
   width: 100%;
   gap: 7px;
+}
+
+/* LIST COMIC BY CHARACTER */
+
+.list-comic-by-character {
+  height: 100%;
+  background-image: url("https://www.planetebd.com/dynamicImages/album/cover/large/35/09/album-cover-large-35099.jpg");
+  background-size: contain;
+  background-position: center;
+  color: white;
+}
+
+.small-container {
+  display: flex;
+  justify-content: center;
+}
+
+.personnage-selectionne {
+  display: flex;
+  background: linear-gradient(black, #35cfb8);
+  width: calc(100% / 2.5);
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.name-description {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  height: 100%;
+}
+
+.list-comic-by-character h3 {
+  color: #eb1c2e;
+  font-weight: bold;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.name-description div {
+  text-align: center;
+}
+
+/* LIST FAVORITE */
+
+.list-favorite {
+  height: 100%;
+  background-image: url("https://www.planetebd.com/dynamicImages/album/cover/large/35/09/album-cover-large-35099.jpg");
+  background-size: contain;
+  background-position: center;
+}
+
+.empty-favorite {
+  height: 25px;
+  margin: 10px 0px;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 5px 5px 0px 5px;
+  background: linear-gradient(#ebb964, #35cfb8);
+  width: 100%;
+  text-align: center;
+}
+
+.list-favorite button {
+  height: 25px;
+  margin: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  background: linear-gradient(#ebb964, #35cfb8);
 }

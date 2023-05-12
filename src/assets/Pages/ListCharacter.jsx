@@ -19,7 +19,6 @@ const ListCharacter = (props) => {
         setData(response.data);
         setTotalCharacter(response.data.count);
         setIsLoading(false);
-        // console.log(response.data);
       } catch (error) {
         console.log(error.response);
       }
@@ -50,7 +49,7 @@ const ListCharacter = (props) => {
               total={totalCharacter}
               setCurrentPage={setCurrentPageCharacter}
             />
-            <div className="character-card ">
+            <div className="character-card">
               {data.results.map((elem) => {
                 const imageSrc = `${elem.thumbnail.path}/portrait_xlarge.${elem.thumbnail.extension}`;
                 return (

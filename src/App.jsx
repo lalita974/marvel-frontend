@@ -5,14 +5,17 @@ import Cookies from "js-cookie";
 
 //Import des components
 import Hearder from "./assets/Components/Header";
-import CharacterCard from "./assets/Components/CharacterCard";
-import ComicCard from "./assets/Components/ComicCard";
 
 //Import des pages
 import ListComic from "./assets/Pages/ListComic";
 import ListCharacter from "./assets/Pages/ListCharacter";
 import ListComicByCharacter from "./assets/Pages/ListComicByCharacter";
 import ListFavorite from "./assets/Pages/ListFavorite";
+
+//Import des icones
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faBoltLightning } from "@fortawesome/free-solid-svg-icons";
+library.add(faBoltLightning);
 
 const App = () => {
   const [favorite, setFavorite] = useState(Cookies.get("favoriteCards") || []);
@@ -22,11 +25,22 @@ const App = () => {
   }
 
   const handleFavorite = (elem, imageSrc) => {
-    console.log(elem);
-    console.log(imageSrc);
     const newTab = [...favorite];
-    console.log(newTab);
-    newTab.push({ ...elem, imageSrc: imageSrc });
+    if (elem.name) {
+      newTab.push({
+        _id: elem._id,
+        name: elem.name,
+        description: elem.description,
+        imageSrc: imageSrc,
+      });
+    } else {
+      newTab.push({
+        _id: elem._id,
+        title: elem.title,
+        description: elem.description,
+        imageSrc: imageSrc,
+      });
+    }
     setFavorite(newTab);
     const cookieString = JSON.stringify(newTab);
     Cookies.set("favoriteCards", cookieString, {
@@ -54,10 +68,21 @@ const App = () => {
             <ListComic favorite={favorite} handleFavorite={handleFavorite} />
           }
         />
-        <Route path="/favorite" element={<ListFavorite />} />
-        <Route path="/comics/:characterId" element={<ListComicByCharacter />} />
-        <Route path="/comic/:comicId" element={<ComicCard />} />
-        <Route path="/character/:characterId" element={<CharacterCard />} />
+        <Route
+          path="/favorite"
+          element={
+            <ListFavorite favorite={favorite} setFavorite={setFavorite} />
+          }
+        />
+        <Route
+          path="/comics/:characterId"
+          element={
+            <ListComicByCharacter
+              favorite={favorite}
+              handleFavorite={handleFavorite}
+            />
+          }
+        />
       </Routes>
     </Router>
   );

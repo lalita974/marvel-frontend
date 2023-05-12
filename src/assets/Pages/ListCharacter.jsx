@@ -14,7 +14,7 @@ const ListCharacter = (props) => {
     const fetchData = async () => {
       try {
         let response = await axios.get(
-          `http://127.0.0.1:3000/characters?name=${searchCharacter}&skip=${currentPageCharacter}`
+          `https://site--marvel-backend--dgnyxjtbkkzs.code.run/characters?name=${searchCharacter}&skip=${currentPageCharacter}`
         );
         setData(response.data);
         setTotalCharacter(response.data.count);
